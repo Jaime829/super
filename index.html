@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oráculo Lumina — Descubre lo que piensas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <header class="top-bar">
+      <div class="brand">
+        <span class="brand__dot"></span>
+        <div>
+          <p class="brand__name">Oráculo Lumina</p>
+          <p class="brand__tag">Adivinación inteligente & humana</p>
+        </div>
+      </div>
+      <nav class="top-bar__actions">
+        <button class="ghost" data-scroll="como-funciona">Cómo funciona</button>
+        <button class="ghost" data-scroll="casos-uso">Casos de uso</button>
+        <button class="primary" data-start>Comenzar ahora</button>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="hero__intro">
+        <span class="pill">✨ 90% más intuitivo que los juegos clásicos</span>
+        <h1>Piensa en algo. Nosotros lo descubrimos con elegancia y precisión.</h1>
+        <p>
+          Una experiencia premium de adivinación que combina preguntas inteligentes, diseño emocional y
+          explicaciones claras. Más rápido, más bello y mucho más confiable.
+        </p>
+        <div class="hero__cta">
+          <button class="primary" data-start>Iniciar sesión de adivinación</button>
+          <button class="secondary" data-scroll="demo">Ver demostración</button>
+        </div>
+        <div class="hero__trust">
+          <div>
+            <strong>+120k</strong>
+            <span>sesiones exitosas</span>
+          </div>
+          <div>
+            <strong>96%</strong>
+            <span>precisión promedio</span>
+          </div>
+          <div>
+            <strong>30 seg</strong>
+            <span>tiempo de descubrimiento</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="oracle" id="demo">
+        <div class="oracle__panel">
+          <div class="oracle__header">
+            <div>
+              <p class="oracle__title">Sesión en vivo</p>
+              <p class="oracle__subtitle">Pulsa una respuesta para avanzar</p>
+            </div>
+            <span class="status">En progreso</span>
+          </div>
+
+          <div class="oracle__question">
+            <h2>¿Tu personaje es real o ficticio?</h2>
+            <p>Estamos afinando el contexto para acelerar el acierto.</p>
+          </div>
+
+          <div class="oracle__answers">
+            <button class="answer answer--yes">Sí</button>
+            <button class="answer answer--no">No</button>
+            <button class="answer answer--unsure">No lo sé</button>
+            <button class="answer answer--depends">Depende</button>
+          </div>
+
+          <div class="oracle__insight">
+            <div>
+              <p class="label">Índice de certeza</p>
+              <p class="value" data-progress="68">68%</p>
+            </div>
+            <div class="progress">
+              <span style="width: 68%"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="oracle__side">
+          <div class="card">
+            <h3>Por qué es mejor</h3>
+            <ul>
+              <li>Preguntas adaptativas con lenguaje natural.</li>
+              <li>Feedback visual en cada decisión.</li>
+              <li>Resultados explicables con historial inteligente.</li>
+            </ul>
+          </div>
+          <div class="card card--highlight">
+            <h3>Vista previa de resultados</h3>
+            <div class="result">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80"
+                alt="Retrato femenino"
+              />
+              <div>
+                <p class="result__title">¿Es Amélie Poulain?</p>
+                <p class="result__text">Coincidencia del 82%. Ficticia, francesa, creativa.</p>
+                <button class="ghost">Ver explicación</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="platform" id="session">
+      <div class="platform__header">
+        <div>
+          <p class="platform__label">Sesión funcional</p>
+          <h2>Plataforma interactiva de adivinación</h2>
+          <p class="platform__subtitle">
+            Responde las preguntas reales y observa cómo el motor adapta la ruta hasta llegar a una
+            hipótesis final.
+          </p>
+        </div>
+        <div class="platform__controls">
+          <button class="secondary" id="restart">Reiniciar sesión</button>
+          <button class="ghost" id="show-history">Ver historial</button>
+        </div>
+      </div>
+
+      <div class="platform__grid">
+        <div class="platform__panel">
+          <div class="platform__question">
+            <p class="platform__step">Pregunta 1 de 6</p>
+            <h3 id="question-title">¿Tu personaje es real?</h3>
+            <p id="question-hint">Selecciona una respuesta para avanzar en la deducción.</p>
+          </div>
+
+          <div class="platform__answers" id="answers"></div>
+
+          <div class="platform__progress">
+            <div>
+              <p class="label">Confianza del modelo</p>
+              <p class="value" id="confidence">55%</p>
+            </div>
+            <div class="progress">
+              <span id="confidence-bar" style="width: 55%"></span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="platform__insights">
+          <div class="card">
+            <h3>Hipótesis actual</h3>
+            <p class="platform__guess" id="current-guess">Aún no hay suficiente información.</p>
+            <div class="platform__badges">
+              <span>Contexto en vivo</span>
+              <span>Explicación clara</span>
+            </div>
+          </div>
+          <div class="card card--highlight">
+            <h3>Historial inteligente</h3>
+            <ul class="history" id="history-list"></ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="platform__result" id="result">
+        <div class="result-card">
+          <div>
+            <p class="platform__label">Resultado final</p>
+            <h3 id="result-title">¡Creo que lo tengo!</h3>
+            <p id="result-description">
+              Responde confirmar o reinicia para probar un nuevo objetivo.
+            </p>
+            <div class="result-actions">
+              <button class="primary" id="confirm">Confirmar</button>
+              <button class="secondary" id="try-again">Probar otro</button>
+            </div>
+          </div>
+          <div class="result-metrics">
+            <div>
+              <strong id="result-confidence">86%</strong>
+              <span>certeza estimada</span>
+            </div>
+            <div>
+              <strong id="result-questions">6</strong>
+              <span>preguntas usadas</span>
+            </div>
+            <div>
+              <strong id="result-domain">Ficción</strong>
+              <span>dominio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="como-funciona">
+      <div class="flow__intro">
+        <h2>Diseñada para sorprender en cada paso</h2>
+        <p>
+          Une una estética premium con una lógica de preguntas que aprende del contexto y explica sus
+          inferencias para crear confianza.
+        </p>
+      </div>
+      <div class="flow__grid">
+        <article>
+          <h3>1. Contexto inicial</h3>
+          <p>Nos cuentas el dominio y ajustamos las preguntas según el nivel de detalle.</p>
+        </article>
+        <article>
+          <h3>2. Motor adaptativo</h3>
+          <p>La plataforma analiza tu respuesta en menos de 200 ms para optimizar el flujo.</p>
+        </article>
+        <article>
+          <h3>3. Revelación elegante</h3>
+          <p>Entregamos el resultado con confianza y recomendaciones para mejorar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="use-cases" id="casos-uso">
+      <div class="flow__intro">
+        <h2>Casos de uso premium</h2>
+        <p>Desde entretenimiento hasta investigación, la plataforma se adapta a distintos escenarios.</p>
+      </div>
+      <div class="flow__grid">
+        <article>
+          <h3>Entretenimiento</h3>
+          <p>Experiencias de marca con dinámicas de adivinación gamificadas.</p>
+        </article>
+        <article>
+          <h3>Educación</h3>
+          <p>Aprendizaje basado en preguntas con explicaciones inteligentes.</p>
+        </article>
+        <article>
+          <h3>Soporte al cliente</h3>
+          <p>Diagnóstico rápido de necesidades mediante respuestas guiadas.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <p class="footer__title">Oráculo Lumina</p>
+        <p>Creado para equipos que quieren una experiencia de adivinación premium.</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Inicio</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Soporte</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
