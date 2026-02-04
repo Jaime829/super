@@ -294,6 +294,154 @@ button:hover {
   gap: 16px;
 }
 
+.platform {
+  padding: 0 6vw 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.platform__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.platform__label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.platform__subtitle {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.platform__controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.platform__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(280px, 1.3fr) minmax(240px, 0.9fr);
+}
+
+.platform__panel {
+  background: var(--card-strong);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.platform__question h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.platform__step {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.platform__answers {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 20px 0 26px;
+}
+
+.platform__answers button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.platform__progress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform__insights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.platform__guess {
+  font-size: 1.05rem;
+  color: var(--secondary);
+  margin: 12px 0 18px;
+}
+
+.platform__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.platform__badges span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.history {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.platform__result {
+  margin-top: 32px;
+  display: none;
+}
+
+.platform__result.is-visible {
+  display: block;
+}
+
+.result-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  background: rgba(111, 107, 255, 0.18);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.result-metrics {
+  display: grid;
+  gap: 12px;
+  min-width: 180px;
+}
+
+.result-metrics strong {
+  font-size: 1.4rem;
+  display: block;
+}
+
 .card {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
@@ -379,6 +527,12 @@ button:hover {
   margin-bottom: 8px;
 }
 
+.use-cases {
+  padding: 0 6vw 80px;
+  position: relative;
+  z-index: 1;
+}
+
 .footer {
   padding: 24px 6vw 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -414,6 +568,10 @@ button:hover {
   }
 
   .oracle {
+    grid-template-columns: 1fr;
+  }
+
+  .platform__grid {
     grid-template-columns: 1fr;
   }
 }
